@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Layout, Menu, Button, Select, Row, Col } from 'antd';
 import { CarOutlined, UserOutlined, GlobalOutlined } from '@ant-design/icons';
@@ -37,7 +36,7 @@ const Header = ({ activeSection, setActiveSection }) => {
             </span>
           </div>
         </Col>
-        
+
         <Col flex="auto" style={{ display: 'flex', justifyContent: 'center' }}>
           <Menu
             mode="horizontal"
@@ -47,20 +46,20 @@ const Header = ({ activeSection, setActiveSection }) => {
             style={{ border: 'none', background: 'transparent' }}
           />
         </Col>
-        
+
         <Col>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <Select
               value={i18n.language}
               onChange={handleLanguageChange}
               style={{ width: 80 }}
-              bordered={false}
+              variant="borderless"
               suffixIcon={<GlobalOutlined />}
             >
               <Option value="en">EN</Option>
               <Option value="ar">AR</Option>
             </Select>
-            
+
             <Button type="primary" icon={<UserOutlined />} style={{ marginLeft: '8px' }}>
               {t('login')}
             </Button>

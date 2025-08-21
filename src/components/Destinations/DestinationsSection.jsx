@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Card, Typography, Space, Button, Tag } from 'ant-design-react';
+import { Row, Col, Card, Typography, Space, Button, Tag } from 'antd';
 import { EnvironmentOutlined, ClockCircleOutlined, CarOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { popularRoutesData, cityDestinationsData } from '../../data/destinationsData';
