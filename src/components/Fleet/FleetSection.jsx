@@ -223,4 +223,175 @@ const FleetSection = () => {
   );
 };
 
-export default FleetSection;
+const TestimonialsSection = () => {
+  const testimonials = [
+    {
+      id: 1,
+      name: "Sarah Johnson",
+      rating: 5,
+      comment: "Excellent service and beautiful cars. The booking process was smooth and the staff was very helpful.",
+      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b789?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+    },
+    {
+      id: 2,
+      name: "Mike Chen",
+      rating: 5,
+      comment: "Great experience! The luxury SUV was perfect for our family vacation. Highly recommended.",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+    },
+    {
+      id: 3,
+      name: "Emma Wilson",
+      rating: 4,
+      comment: "Good value for money and reliable service. The electric car was a joy to drive.",
+      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+    }
+  ];
+
+  return (
+    <div className="section-background-primary" style={{ padding: '80px 50px' }}>
+      <Title className="section-title" style={{ color: 'white' }}>Customer Testimonials</Title>
+      
+      <Row gutter={[24, 32]}>
+        {testimonials.map((testimonial) => (
+          <Col xs={24} md={8} key={testimonial.id}>
+            <Card style={{ 
+              background: 'rgba(255, 255, 255, 0.95)', 
+              borderRadius: '12px', 
+              height: '100%',
+              border: 'none'
+            }}>
+              <Space direction="vertical" style={{ width: '100%', textAlign: 'center' }}>
+                <img 
+                  src={testimonial.avatar} 
+                  alt={testimonial.name}
+                  style={{ 
+                    width: '60px', 
+                    height: '60px', 
+                    borderRadius: '50%', 
+                    objectFit: 'cover',
+                    margin: '0 auto'
+                  }} 
+                />
+                <Title level={4} style={{ margin: '8px 0' }}>{testimonial.name}</Title>
+                <Rate disabled defaultValue={testimonial.rating} style={{ fontSize: '16px' }} />
+                <Paragraph style={{ fontStyle: 'italic', margin: '16px 0' }}>
+                  "{testimonial.comment}"
+                </Paragraph>
+              </Space>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    </div>
+  );
+};
+
+const PricingSection = () => {
+  const pricingPlans = [
+    {
+      title: "Basic",
+      price: "29",
+      period: "per day",
+      features: ["Economy Cars", "Basic Insurance", "24/7 Support", "Free Cancellation"],
+      popular: false
+    },
+    {
+      title: "Premium",
+      price: "59",
+      period: "per day", 
+      features: ["Luxury Cars", "Full Insurance", "GPS Navigation", "Free Cancellation", "Priority Support"],
+      popular: true
+    },
+    {
+      title: "Executive",
+      price: "99",
+      period: "per day",
+      features: ["Executive Cars", "Comprehensive Insurance", "Chauffeur Available", "Concierge Service", "Premium Support"],
+      popular: false
+    }
+  ];
+
+  return (
+    <div className="section-background-gray" style={{ padding: '80px 50px' }}>
+      <Title className="section-title">Flexible Pricing Plans</Title>
+      
+      <Row gutter={[24, 32]} justify="center">
+        {pricingPlans.map((plan, index) => (
+          <Col xs={24} md={8} key={index}>
+            <Card 
+              style={{ 
+                height: '100%',
+                border: plan.popular ? '3px solid #4F46E5' : '1px solid #e2e8f0',
+                borderRadius: '16px',
+                position: 'relative'
+              }}
+            >
+              {plan.popular && (
+                <div style={{
+                  position: 'absolute',
+                  top: '-12px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  background: '#4F46E5',
+                  color: 'white',
+                  padding: '6px 16px',
+                  borderRadius: '20px',
+                  fontSize: '14px',
+                  fontWeight: 600
+                }}>
+                  Most Popular
+                </div>
+              )}
+              
+              <Space direction="vertical" style={{ width: '100%', textAlign: 'center' }}>
+                <Title level={3} style={{ margin: '20px 0 8px 0' }}>{plan.title}</Title>
+                <div>
+                  <Text style={{ fontSize: '48px', fontWeight: 700, color: '#4F46E5' }}>
+                    ${plan.price}
+                  </Text>
+                  <Text type="secondary" style={{ fontSize: '16px', marginLeft: '8px' }}>
+                    {plan.period}
+                  </Text>
+                </div>
+                
+                <div style={{ margin: '30px 0' }}>
+                  {plan.features.map((feature, idx) => (
+                    <div key={idx} style={{ margin: '12px 0', textAlign: 'left' }}>
+                      <Space>
+                        <span style={{ color: '#10B981', fontSize: '16px' }}>✓</span>
+                        <Text>{feature}</Text>
+                      </Space>
+                    </div>
+                  ))}
+                </div>
+                
+                <Button 
+                  type={plan.popular ? "primary" : "default"}
+                  className={plan.popular ? "gradient-button" : ""}
+                  size="large"
+                  block
+                  style={{ marginTop: '20px' }}
+                >
+                  Choose Plan
+                </Button>
+              </Space>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    </div>
+  );
+};
+
+const FleetSectionWithExtras = () => {
+  return (
+    <>
+      <FleetSection />
+      <TestimonialsSection />
+      <PricingSection />
+    </>
+  );
+};
+
+export default FleetSectionWithExtras;

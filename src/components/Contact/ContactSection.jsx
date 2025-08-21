@@ -44,8 +44,8 @@ const ContactSection = () => {
   ];
 
   return (
-    <div className="section-background-tertiary" style={{ padding: '80px 50px' }}>
-      <Title className="section-title" style={{ color: 'white' }}>
+    <div className="section-background-gray" style={{ padding: '80px 50px' }}>
+      <Title className="section-title">
         {t('getInTouch')}
       </Title>
       
@@ -53,10 +53,10 @@ const ContactSection = () => {
         <Col xs={24} lg={8}>
           <Space direction="vertical" size="large" style={{ width: '100%' }}>
             <div>
-              <Title level={3} style={{ color: 'white', marginBottom: '16px' }}>
+              <Title level={3} style={{ color: '#1a202c', marginBottom: '16px' }}>
                 Contact Information
               </Title>
-              <Text style={{ fontSize: '16px', color: 'rgba(255, 255, 255, 0.9)' }}>
+              <Text style={{ fontSize: '16px', color: '#64748b' }}>
                 Get in touch with us for any questions about our car rental services.
               </Text>
             </div>
