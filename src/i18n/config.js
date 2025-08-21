@@ -1,3 +1,4 @@
+
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
@@ -9,7 +10,7 @@ const resources = {
       destinations: 'Destinations',
       fleet: 'Fleet',
       blog: 'Blog',
-      contact: 'Contact',
+      contact: 'Contact Us',
       login: 'Login',
       register: 'Register',
       language: 'العربية',
@@ -18,7 +19,7 @@ const resources = {
       heroTitle: 'The fastest and most comfortable way',
       heroSubtitle: 'to book your car',
       heroDescription: 'Where are you traveling? Find the perfect car for your journey with our premium fleet.',
-
+      
       // Booking Form
       oneWay: 'One Way',
       roundTrip: 'Round Trip',
@@ -31,31 +32,21 @@ const resources = {
       passengers: 'Passengers',
       carType: 'Car Type',
       searchCars: 'Search Cars',
-
+      
       // Car Types
       economy: 'Economy',
       suv: 'SUV',
       luxury: 'Luxury',
       van: 'Van',
-
+      
       // Fleet Section
-      ourFleet: 'Our Fleet',
-      fleetDescription: 'Choose from our diverse fleet of premium vehicles. Each car is maintained to the highest standards and equipped with modern amenities for your comfort and safety.',
+      ourFleet: 'Our Premium Fleet',
       bookNow: 'Book Now',
       perDay: 'per day',
-      passengers: 'passengers',
-      reviews: 'reviews',
-      whyChooseFleet: 'Why Choose Our Fleet?',
-      safetyFirst: 'Safety First',
-      safetyDescription: 'All vehicles undergo regular safety inspections and maintenance',
-      premiumQuality: 'Premium Quality',
-      qualityDescription: 'Modern vehicles with the latest features and amenities',
-      support247: '24/7 Support',
-      supportDescription: 'Round-the-clock customer support and roadside assistance',
-
+      
       // Destinations
       popularDestinations: 'Popular Destinations',
-
+      
       // Blog
       latestNews: 'Latest News & Tips',
       latestFromBlog: 'Latest From Our Blog',
@@ -65,7 +56,7 @@ const resources = {
       carGuides: 'Car Guides',
       safety: 'Safety',
       viewAllArticles: 'View All Articles',
-
+      
       // Contact
       getInTouch: 'Get In Touch',
       name: 'Name',
@@ -85,7 +76,7 @@ const resources = {
       planPerfectTrip: 'Plan Your Perfect Trip',
       customRouteDescription: 'Can\'t find your destination? Contact us for custom route planning and special requests.',
       requestCustomRoute: 'Request Custom Route',
-
+      
       // Footer
       aboutUs: 'About Us',
       privacyPolicy: 'Privacy Policy',
@@ -112,7 +103,7 @@ const resources = {
       heroTitle: 'أسرع وأكثر الطرق راحة',
       heroSubtitle: 'لحجز سيارتك',
       heroDescription: 'إلى أين تسافر؟ اعثر على السيارة المثالية لرحلتك مع أسطولنا المميز.',
-
+      
       // Booking Form
       oneWay: 'ذهاب فقط',
       roundTrip: 'ذهاب وإياب',
@@ -125,31 +116,21 @@ const resources = {
       passengers: 'عدد الركاب',
       carType: 'نوع السيارة',
       searchCars: 'البحث عن السيارات',
-
+      
       // Car Types
       economy: 'اقتصادية',
       suv: 'دفع رباعي',
       luxury: 'فاخرة',
       van: 'فان',
-
+      
       // Fleet Section
-      ourFleet: 'أسطولنا',
-      fleetDescription: 'اختر من أسطولنا المتنوع من المركبات المتميزة. كل سيارة يتم صيانتها وفقاً لأعلى المعايير ومجهزة بوسائل الراحة الحديثة لراحتك وأمانك.',
+      ourFleet: 'أسطولنا المميز',
       bookNow: 'احجز الآن',
       perDay: 'في اليوم',
-      passengers: 'راكب',
-      reviews: 'تقييم',
-      whyChooseFleet: 'لماذا تختار أسطولنا؟',
-      safetyFirst: 'الأمان أولاً',
-      safetyDescription: 'جميع المركبات تخضع لفحوصات أمان وصيانة منتظمة',
-      premiumQuality: 'جودة متميزة',
-      qualityDescription: 'مركبات حديثة بأحدث الميزات ووسائل الراحة',
-      support247: 'دعم 24/7',
-      supportDescription: 'دعم عملاء على مدار الساعة ومساعدة على الطريق',
-
+      
       // Destinations
       popularDestinations: 'الوجهات الشائعة',
-
+      
       // Blog
       latestNews: 'آخر الأخبار والنصائح',
       latestFromBlog: 'آخر أخبار مدونتنا',
@@ -159,7 +140,7 @@ const resources = {
       carGuides: 'أدلة السيارات',
       safety: 'السلامة',
       viewAllArticles: 'عرض جميع المقالات',
-
+      
       // Contact
       getInTouch: 'تواصل معنا',
       name: 'الاسم',
@@ -179,7 +160,7 @@ const resources = {
       planPerfectTrip: 'خطط لرحلتك المثالية',
       customRouteDescription: 'لا يمكنك العثور على وجهتك؟ اتصل بنا للحصول على تخطيط مسار مخصص وطلبات خاصة.',
       requestCustomRoute: 'طلب مسار مخصص',
-
+      
       // Footer
       aboutUs: 'معلومات عنا',
       privacyPolicy: 'سياسة الخصوصية',

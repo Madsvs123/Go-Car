@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Row, Col, Card, Typography, Space, Button, Tag } from 'antd';
 import { EnvironmentOutlined, ClockCircleOutlined, CarOutlined } from '@ant-design/icons';
@@ -85,10 +86,10 @@ const DestinationsSection = () => {
   ];
 
   return (
-    <div className="section-background-white" style={{ padding: '80px 0' }}>
-      <div className="app-container">
+    <div className="section-background-gray" style={{ padding: '80px 0' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 50px' }}>
         <Title className="section-title">{t('popularDestinations')}</Title>
-
+      
       <div style={{ textAlign: 'center', marginBottom: '60px' }}>
         <Paragraph style={{ fontSize: '18px', color: '#64748b', maxWidth: '600px', margin: '0 auto' }}>
           Discover amazing destinations with our convenient car rental service. 
@@ -136,7 +137,7 @@ const DestinationsSection = () => {
                 <Title level={4} style={{ margin: 0 }}>
                   {route.from} → {route.to}
                 </Title>
-
+                
                 <Space>
                   <ClockCircleOutlined style={{ color: '#4F46E5' }} />
                   <Text>{route.duration}</Text>
