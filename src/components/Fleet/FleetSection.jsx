@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Row, Col, Card, Typography, Space, Button, Rate, Tag } from 'antd';
 import { UserOutlined, CarOutlined, SettingOutlined, SafetyOutlined } from '@ant-design/icons';
@@ -95,7 +94,7 @@ const FleetSection = () => {
     <div className="section-background-light" style={{ padding: '80px 0' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 50px' }}>
         <Title className="section-title">{t('ourFleet')}</Title>
-      
+
       <div style={{ textAlign: 'center', marginBottom: '60px' }}>
         <Paragraph style={{ fontSize: '18px', color: '#64748b', maxWidth: '600px', margin: '0 auto' }}>
           Choose from our diverse fleet of premium vehicles. Each car is maintained to the highest standards 
@@ -107,17 +106,19 @@ const FleetSection = () => {
         {cars.map((car) => (
           <Col xs={24} sm={12} lg={8} key={car.id}>
             <Card
+              hoverable
               className="car-card"
+              style={{ height: '480px', display: 'flex', flexDirection: 'column' }}
+              bodyStyle={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}
               cover={
-                <div style={{ position: 'relative', overflow: 'hidden', height: '240px' }}>
+                <div style={{ position: 'relative', height: '200px', overflow: 'hidden' }}>
                   <img
                     alt={car.name}
                     src={car.image}
                     style={{ 
                       width: '100%', 
                       height: '100%', 
-                      objectFit: 'cover',
-                      transition: 'transform 0.3s ease'
+                      objectFit: 'cover' 
                     }}
                   />
                   <div style={{
@@ -127,11 +128,10 @@ const FleetSection = () => {
                     background: 'rgba(255, 255, 255, 0.9)',
                     padding: '4px 8px',
                     borderRadius: '6px',
-                    fontSize: '14px',
-                    fontWeight: 'bold',
-                    color: '#4F46E5'
+                    fontSize: '12px',
+                    fontWeight: 'bold'
                   }}>
-                    ${car.price}/{t('perDay')}
+                    ${car.price}/day
                   </div>
                 </div>
               }
@@ -141,33 +141,37 @@ const FleetSection = () => {
                 </Button>
               ]}
             >
-              <div style={{ marginBottom: '16px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px' }}>
-                  <Title level={4} style={{ margin: 0, color: '#1a202c' }}>
-                    {car.name}
-                  </Title>
-                </div>
-                
-                <div style={{ display: 'flex', alignItems: 'center', marginBottom: '12px' }}>
-                  <Rate disabled defaultValue={car.rating} style={{ fontSize: '14px' }} />
-                  <Text type="secondary" style={{ marginLeft: '8px' }}>
-                    {car.rating} ({car.reviews} reviews)
-                  </Text>
-                </div>
-              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+                <div style={{ flexGrow: 1 }}>
+                  <div style={{ marginBottom: '8px' }}>
+                    <Title level={4} style={{ margin: 0, color: '#1a202c' }}>
+                      {car.name}
+                    </Title>
+                  </div>
 
-              <Paragraph type="secondary" style={{ marginBottom: '16px', fontSize: '14px' }}>
-                {car.description}
-              </Paragraph>
+                  <div style={{ display: 'flex', alignItems: 'center', marginBottom: '12px' }}>
+                    <Rate disabled defaultValue={car.rating} style={{ fontSize: '14px' }} />
+                    <Text type="secondary" style={{ marginLeft: '8px' }}>
+                      {car.rating} ({car.reviews} reviews)
+                    </Text>
+                  </div>
+                </div>
 
-              <Space direction="vertical" size="small" style={{ width: '100%' }}>
-                <Space>
+                <Paragraph 
+                  type="secondary" 
+                  style={{ margin: '8px 0 16px 0', fontSize: '14px', lineHeight: '1.4' }}
+                  ellipsis={{ rows: 2 }}
+                >
+                  {car.description}
+                </Paragraph>
+
+                <Space style={{ marginBottom: '12px' }}>
                   <UserOutlined style={{ color: '#4F46E5' }} />
                   <Text>{car.passengers} passengers</Text>
                   <CarOutlined style={{ color: '#10B981', marginLeft: '12px' }} />
                   <Text>{car.transmission}</Text>
                 </Space>
-                
+
                 <Space>
                   <SettingOutlined style={{ color: '#F59E0B' }} />
                   <Text>{car.fuel}</Text>
@@ -182,7 +186,24 @@ const FleetSection = () => {
                     ))}
                   </Space>
                 </div>
-              </Space>
+              </div>
+
+              <div style={{ 
+                display: 'flex', 
+                justifyContent: 'space-between', 
+                alignItems: 'center',
+                marginTop: 'auto'
+              }}>
+                <div>
+                  <Rate disabled defaultValue={car.rating} style={{ fontSize: '14px' }} />
+                  <Text type="secondary" style={{ fontSize: '12px', marginLeft: '8px' }}>
+                    ({car.reviews})
+                  </Text>
+                </div>
+                <Button type="primary" size="small">
+                  {t('rentNow')}
+                </Button>
+              </div>
             </Card>
           </Col>
         ))}

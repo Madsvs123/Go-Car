@@ -99,14 +99,14 @@ const BlogSection = () => {
     : articles.filter(article => article.category === selectedCategory);
 
   return (
-    <div className="section-background-secondary" style={{ padding: '80px 0' }}>
+    <div className="section-background-light" style={{ padding: '80px 0' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 50px' }}>
-        <Title className="section-title" style={{ color: 'white' }}>
+        <Title className="section-title">
           {t('latestNews')}
         </Title>
       
       <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-        <Paragraph style={{ fontSize: '18px', color: 'rgba(255, 255, 255, 0.9)', maxWidth: '600px', margin: '0 auto' }}>
+        <Paragraph style={{ fontSize: '18px', color: '#64748b', maxWidth: '600px', margin: '0 auto' }}>
           Stay updated with the latest travel tips, car guides, and destination insights from our expert team.
         </Paragraph>
       </div>
@@ -119,9 +119,6 @@ const BlogSection = () => {
               type={selectedCategory === category.key ? 'primary' : 'default'}
               onClick={() => setSelectedCategory(category.key)}
               style={{
-                background: selectedCategory === category.key ? 'white' : 'transparent',
-                color: selectedCategory === category.key ? '#4F46E5' : 'white',
-                border: '2px solid white',
                 borderRadius: '20px'
               }}
             >
@@ -218,12 +215,9 @@ const BlogSection = () => {
 
       <div style={{ textAlign: 'center', marginTop: '60px' }}>
         <Button 
-          type="default" 
+          type="primary" 
           size="large"
           style={{
-            background: 'white',
-            color: '#4F46E5',
-            border: 'none',
             borderRadius: '8px',
             fontWeight: 600,
             padding: '12px 32px',

@@ -44,9 +44,9 @@ const ContactSection = () => {
   ];
 
   return (
-    <div className="section-background-tertiary" style={{ padding: '80px 0' }}>
+    <div className="section-background-light" style={{ padding: '80px 0' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 50px' }}>
-        <Title className="section-title" style={{ color: 'white' }}>
+        <Title className="section-title">
           {t('getInTouch')}
         </Title>
       
@@ -54,10 +54,10 @@ const ContactSection = () => {
         <Col xs={24} lg={8}>
           <Space direction="vertical" size="large" style={{ width: '100%' }}>
             <div>
-              <Title level={3} style={{ color: 'white', marginBottom: '16px' }}>
+              <Title level={3} style={{ marginBottom: '16px' }}>
                 {t('contactInformation')}
               </Title>
-              <Text style={{ fontSize: '16px', color: 'rgba(255, 255, 255, 0.9)' }}>
+              <Text style={{ fontSize: '16px', color: '#64748b' }}
                 {t('getInTouch')}
               </Text>
             </div>
