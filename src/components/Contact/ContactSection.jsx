@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Row, Col, Typography, Form, Input, Button, Card, Space, message } from 'antd';
 import { MailOutlined, PhoneOutlined, EnvironmentOutlined, SendOutlined } from '@ant-design/icons';
@@ -44,12 +43,12 @@ const ContactSection = () => {
   ];
 
   return (
-    <div className="section-background-tertiary" style={{ padding: '80px 0' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 50px' }}>
+    <div className="section-background-light" style={{ padding: '80px 0' }}>
+      <div className="app-container">
         <Title className="section-title" style={{ color: 'white' }}>
           {t('getInTouch')}
         </Title>
-      
+
       <Row gutter={[48, 32]} align="top">
         <Col xs={24} lg={8}>
           <Space direction="vertical" size="large" style={{ width: '100%' }}>
@@ -61,11 +60,11 @@ const ContactSection = () => {
                 {t('getInTouch')}
               </Text>
             </div>
-            
+
             <Space direction="vertical" size="large" style={{ width: '100%' }}>
               {contactInfo.map((item, index) => (
-                <Card key={index} size="small" style={{ 
-                  border: 'none', 
+                <Card key={index} size="small" style={{
+                  border: 'none',
                   background: 'rgba(255, 255, 255, 0.95)',
                   borderRadius: '12px'
                 }}>
@@ -82,10 +81,10 @@ const ContactSection = () => {
             </Space>
           </Space>
         </Col>
-        
+
         <Col xs={24} lg={16}>
-          <Card 
-            style={{ 
+          <Card
+            style={{
               borderRadius: '16px',
               background: 'rgba(255, 255, 255, 0.95)',
               backdropFilter: 'blur(10px)',
@@ -95,7 +94,7 @@ const ContactSection = () => {
             <Title level={3} style={{ marginBottom: '24px', textAlign: 'center' }}>
               {t('sendUsMessage')}
             </Title>
-            
+
             <Form
               form={form}
               layout="vertical"
@@ -125,7 +124,7 @@ const ContactSection = () => {
                   </Form.Item>
                 </Col>
               </Row>
-              
+
               <Row gutter={[16, 0]}>
                 <Col xs={24} sm={12}>
                   <Form.Item
@@ -146,22 +145,22 @@ const ContactSection = () => {
                   </Form.Item>
                 </Col>
               </Row>
-              
+
               <Form.Item
                 name="message"
                 label={t('message')}
                 rules={[{ required: true, message: 'Please enter your message' }]}
               >
-                <TextArea 
-                  rows={4} 
+                <TextArea
+                  rows={4}
                   placeholder={t('message')}
                 />
               </Form.Item>
-              
+
               <Form.Item style={{ marginBottom: 0, textAlign: 'center' }}>
-                <Button 
-                  type="primary" 
-                  htmlType="submit" 
+                <Button
+                  type="primary"
+                  htmlType="submit"
                   loading={loading}
                   icon={<SendOutlined />}
                   className="gradient-button"

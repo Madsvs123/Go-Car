@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Row, Col, Card, Typography, Space, Tag, Button, Avatar } from 'antd';
 import { CalendarOutlined, UserOutlined, EyeOutlined } from '@ant-design/icons';
@@ -100,11 +99,11 @@ const BlogSection = () => {
 
   return (
     <div className="section-background-secondary" style={{ padding: '80px 0' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 50px' }}>
-        <Title className="section-title" style={{ color: 'white' }}>
+      <div className="app-container">
+        <Title className="section-title section-title-white" style={{ color: 'white' }}>
           {t('latestNews')}
         </Title>
-      
+
       <div style={{ textAlign: 'center', marginBottom: '60px' }}>
         <Paragraph style={{ fontSize: '18px', color: 'rgba(255, 255, 255, 0.9)', maxWidth: '600px', margin: '0 auto' }}>
           Stay updated with the latest travel tips, car guides, and destination insights from our expert team.
