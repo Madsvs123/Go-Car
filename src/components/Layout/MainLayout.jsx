@@ -40,9 +40,7 @@ const MainLayout = () => {
     <Layout>
       <Header activeSection={activeSection} setActiveSection={setActiveSection} />
       <Content>
-        <div className="main-container">
-          {renderContent()}
-        </div>
+        {renderContent()}
       </Content>
       <Footer />
     </Layout>
