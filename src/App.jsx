@@ -31,10 +31,12 @@ const theme = {
 
 export default function App() {
   return (
-    <I18nextProvider i18n={i18n}>
-      <ConfigProvider theme={theme}>
-        <MainLayout />
-      </ConfigProvider>
-    </I18nextProvider>
+    <div className="app-container">
+      <I18nextProvider i18n={i18n}>
+        <ConfigProvider theme={theme}>
+          <MainLayout />
+        </ConfigProvider>
+      </I18nextProvider>
+    </div>
   );
 }

@@ -16,6 +16,36 @@ body[dir="rtl"] {
   direction: rtl;
 }
 
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.section-background-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.section-background-secondary {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.section-background-tertiary {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+}
+
+.section-background-light {
+  background: #ffffff;
+  color: #1a202c;
+}
+
+.section-background-gray {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  color: #1a202c;
+}
+
 .hero-gradient {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 600px;
