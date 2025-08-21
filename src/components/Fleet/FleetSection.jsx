@@ -3,7 +3,7 @@ import React from 'react';
 import { Row, Col, Card, Typography, Space, Button, Rate, Tag } from 'antd';
 import { UserOutlined, CarOutlined, SettingOutlined, SafetyOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
-import { carsData } from '../../data/carsData';
+import { carsData } from '../../data/carsData.jsx';
 
 const { Title, Text, Paragraph } = Typography;
 
