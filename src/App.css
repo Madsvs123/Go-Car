@@ -1,2 +1,128 @@
-main {
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: #f8fafc;
+  color: #1a202c;
+  direction: ltr;
+}
+
+body[dir="rtl"] {
+  direction: rtl;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.gradient-button {
+  background: linear-gradient(135deg, #4F46E5, #7C3AED);
+  border: none;
+  color: white;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gradient-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
+}
+
+.car-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.destination-card {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(16, 185, 129, 0.1));
+  border: 1px solid rgba(79, 70, 229, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(79, 70, 229, 0.15);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, #4F46E5, #10B981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-gradient {
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .hero-gradient {
+    min-height: 500px;
+    padding: 20px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+.ant-layout-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(79, 70, 229, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+}
+
+.ant-layout-content {
+  margin-top: 64px;
 }
