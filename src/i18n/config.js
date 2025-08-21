@@ -49,7 +49,13 @@ const resources = {
       
       // Blog
       latestNews: 'Latest News & Tips',
+      latestFromBlog: 'Latest From Our Blog',
       readMore: 'Read More',
+      allArticles: 'All Articles',
+      travelTips: 'Travel Tips',
+      carGuides: 'Car Guides',
+      safety: 'Safety',
+      viewAllArticles: 'View All Articles',
       
       // Contact
       getInTouch: 'Get In Touch',
@@ -58,6 +64,18 @@ const resources = {
       phone: 'Phone',
       message: 'Message',
       sendMessage: 'Send Message',
+      contactInformation: 'Contact Information',
+      sendUsMessage: 'Send us a Message',
+      fullName: 'Full Name',
+      emailAddress: 'Email Address',
+      phoneNumber: 'Phone Number',
+      subject: 'Subject',
+      available247: 'Available 24/7',
+      replyWithin24: 'We reply within 24 hours',
+      visitOffice: 'Visit our office',
+      planPerfectTrip: 'Plan Your Perfect Trip',
+      customRouteDescription: 'Can\'t find your destination? Contact us for custom route planning and special requests.',
+      requestCustomRoute: 'Request Custom Route',
       
       // Footer
       aboutUs: 'About Us',
@@ -115,7 +133,13 @@ const resources = {
       
       // Blog
       latestNews: 'آخر الأخبار والنصائح',
+      latestFromBlog: 'آخر أخبار مدونتنا',
       readMore: 'اقرأ المزيد',
+      allArticles: 'جميع المقالات',
+      travelTips: 'نصائح السفر',
+      carGuides: 'أدلة السيارات',
+      safety: 'السلامة',
+      viewAllArticles: 'عرض جميع المقالات',
       
       // Contact
       getInTouch: 'تواصل معنا',
@@ -124,6 +148,18 @@ const resources = {
       phone: 'الهاتف',
       message: 'الرسالة',
       sendMessage: 'إرسال الرسالة',
+      contactInformation: 'معلومات الاتصال',
+      sendUsMessage: 'أرسل لنا رسالة',
+      fullName: 'الاسم الكامل',
+      emailAddress: 'عنوان البريد الإلكتروني',
+      phoneNumber: 'رقم الهاتف',
+      subject: 'الموضوع',
+      available247: 'متاح 24/7',
+      replyWithin24: 'نرد خلال 24 ساعة',
+      visitOffice: 'زيارة مكتبنا',
+      planPerfectTrip: 'خطط لرحلتك المثالية',
+      customRouteDescription: 'لا يمكنك العثور على وجهتك؟ اتصل بنا للحصول على تخطيط مسار مخصص وطلبات خاصة.',
+      requestCustomRoute: 'طلب مسار مخصص',
       
       // Footer
       aboutUs: 'معلومات عنا',

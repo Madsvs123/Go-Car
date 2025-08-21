@@ -25,39 +25,40 @@ const ContactSection = () => {
   const contactInfo = [
     {
       icon: <PhoneOutlined style={{ fontSize: '24px', color: '#4F46E5' }} />,
-      title: 'Phone',
+      title: t('phone'),
       info: '+1 (555) 123-4567',
-      subtitle: 'Available 24/7'
+      subtitle: t('available247')
     },
     {
       icon: <MailOutlined style={{ fontSize: '24px', color: '#10B981' }} />,
-      title: 'Email',
+      title: t('email'),
       info: 'info@gocar.com',
-      subtitle: 'We reply within 24 hours'
+      subtitle: t('replyWithin24')
     },
     {
       icon: <EnvironmentOutlined style={{ fontSize: '24px', color: '#F59E0B' }} />,
       title: 'Address',
       info: '123 Main Street, City',
-      subtitle: 'Visit our office'
+      subtitle: t('visitOffice')
     }
   ];
 
   return (
-    <div className="section-background-tertiary" style={{ padding: '80px 50px' }}>
-      <Title className="section-title" style={{ color: 'white' }}>
-        {t('getInTouch')}
-      </Title>
+    <div className="section-background-tertiary" style={{ padding: '80px 0' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 50px' }}>
+        <Title className="section-title" style={{ color: 'white' }}>
+          {t('getInTouch')}
+        </Title>
       
       <Row gutter={[48, 32]} align="top">
         <Col xs={24} lg={8}>
           <Space direction="vertical" size="large" style={{ width: '100%' }}>
             <div>
               <Title level={3} style={{ color: 'white', marginBottom: '16px' }}>
-                Contact Information
+                {t('contactInformation')}
               </Title>
               <Text style={{ fontSize: '16px', color: 'rgba(255, 255, 255, 0.9)' }}>
-                Get in touch with us for any questions about our car rental services.
+                {t('getInTouch')}
               </Text>
             </div>
             
@@ -92,7 +93,7 @@ const ContactSection = () => {
             }}
           >
             <Title level={3} style={{ marginBottom: '24px', textAlign: 'center' }}>
-              Send us a Message
+              {t('sendUsMessage')}
             </Title>
             
             <Form
@@ -105,22 +106,22 @@ const ContactSection = () => {
                 <Col xs={24} sm={12}>
                   <Form.Item
                     name="name"
-                    label="Full Name"
+                    label={t('fullName')}
                     rules={[{ required: true, message: 'Please enter your name' }]}
                   >
-                    <Input placeholder="Enter your full name" />
+                    <Input placeholder={t('fullName')} />
                   </Form.Item>
                 </Col>
                 <Col xs={24} sm={12}>
                   <Form.Item
                     name="email"
-                    label="Email Address"
+                    label={t('emailAddress')}
                     rules={[
                       { required: true, message: 'Please enter your email' },
                       { type: 'email', message: 'Please enter a valid email' }
                     ]}
                   >
-                    <Input placeholder="Enter your email address" />
+                    <Input placeholder={t('emailAddress')} />
                   </Form.Item>
                 </Col>
               </Row>
@@ -129,31 +130,31 @@ const ContactSection = () => {
                 <Col xs={24} sm={12}>
                   <Form.Item
                     name="phone"
-                    label="Phone Number"
+                    label={t('phoneNumber')}
                     rules={[{ required: true, message: 'Please enter your phone number' }]}
                   >
-                    <Input placeholder="Enter your phone number" />
+                    <Input placeholder={t('phoneNumber')} />
                   </Form.Item>
                 </Col>
                 <Col xs={24} sm={12}>
                   <Form.Item
                     name="subject"
-                    label="Subject"
+                    label={t('subject')}
                     rules={[{ required: true, message: 'Please enter a subject' }]}
                   >
-                    <Input placeholder="Enter message subject" />
+                    <Input placeholder={t('subject')} />
                   </Form.Item>
                 </Col>
               </Row>
               
               <Form.Item
                 name="message"
-                label="Message"
+                label={t('message')}
                 rules={[{ required: true, message: 'Please enter your message' }]}
               >
                 <TextArea 
                   rows={4} 
-                  placeholder="Tell us how we can help you..." 
+                  placeholder={t('message')}
                 />
               </Form.Item>
               
@@ -166,13 +167,14 @@ const ContactSection = () => {
                   className="gradient-button"
                   style={{ padding: '12px 32px', height: 'auto' }}
                 >
-                  Send Message
+                  {t('sendMessage')}
                 </Button>
               </Form.Item>
             </Form>
           </Card>
         </Col>
       </Row>
+      </div>
     </div>
   );
 };

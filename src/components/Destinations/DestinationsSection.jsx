@@ -86,8 +86,9 @@ const DestinationsSection = () => {
   ];
 
   return (
-    <div className="section-background-gray" style={{ padding: '80px 50px' }}>
-      <Title className="section-title">{t('popularDestinations')}</Title>
+    <div className="section-background-gray" style={{ padding: '80px 0' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 50px' }}>
+        <Title className="section-title">{t('popularDestinations')}</Title>
       
       <div style={{ textAlign: 'center', marginBottom: '60px' }}>
         <Paragraph style={{ fontSize: '18px', color: '#64748b', maxWidth: '600px', margin: '0 auto' }}>
@@ -195,13 +196,14 @@ const DestinationsSection = () => {
       </Row>
 
       <div style={{ textAlign: 'center', marginTop: '60px', padding: '40px', background: 'white', borderRadius: '16px' }}>
-        <Title level={3}>Plan Your Perfect Trip</Title>
+        <Title level={3}>{t('planPerfectTrip')}</Title>
         <Paragraph style={{ fontSize: '16px', color: '#64748b', marginBottom: '24px' }}>
-          Can't find your destination? Contact us for custom route planning and special requests.
+          {t('customRouteDescription')}
         </Paragraph>
         <Button type="primary" size="large" className="gradient-button">
-          Request Custom Route
+          {t('requestCustomRoute')}
         </Button>
+      </div>
       </div>
     </div>
   );

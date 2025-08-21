@@ -92,8 +92,9 @@ const FleetSection = () => {
   ];
 
   return (
-    <div className="section-background-light" style={{ padding: '80px 50px' }}>
-      <Title className="section-title">{t('ourFleet')}</Title>
+    <div className="section-background-light" style={{ padding: '80px 0' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 50px' }}>
+        <Title className="section-title">{t('ourFleet')}</Title>
       
       <div style={{ textAlign: 'center', marginBottom: '60px' }}>
         <Paragraph style={{ fontSize: '18px', color: '#64748b', maxWidth: '600px', margin: '0 auto' }}>
@@ -218,6 +219,7 @@ const FleetSection = () => {
             </Space>
           </Col>
         </Row>
+      </div>
       </div>
     </div>
   );

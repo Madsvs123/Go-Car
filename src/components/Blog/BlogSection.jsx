@@ -12,11 +12,11 @@ const BlogSection = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   const categories = [
-    { key: 'all', label: 'All Articles' },
-    { key: 'travel-tips', label: 'Travel Tips' },
-    { key: 'car-guides', label: 'Car Guides' },
-    { key: 'destinations', label: 'Destinations' },
-    { key: 'safety', label: 'Safety' }
+    { key: 'all', label: t('allArticles') },
+    { key: 'travel-tips', label: t('travelTips') },
+    { key: 'car-guides', label: t('carGuides') },
+    { key: 'destinations', label: t('destinations') },
+    { key: 'safety', label: t('safety') }
   ];
 
   const articles = [
@@ -99,10 +99,11 @@ const BlogSection = () => {
     : articles.filter(article => article.category === selectedCategory);
 
   return (
-    <div className="section-background-secondary" style={{ padding: '80px 50px' }}>
-      <Title className="section-title" style={{ color: 'white' }}>
-        {t('latestFromBlog')}
-      </Title>
+    <div className="section-background-secondary" style={{ padding: '80px 0' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 50px' }}>
+        <Title className="section-title" style={{ color: 'white' }}>
+          {t('latestNews')}
+        </Title>
       
       <div style={{ textAlign: 'center', marginBottom: '60px' }}>
         <Paragraph style={{ fontSize: '18px', color: 'rgba(255, 255, 255, 0.9)', maxWidth: '600px', margin: '0 auto' }}>
@@ -206,7 +207,7 @@ const BlogSection = () => {
                     </Text>
                   </Space>
                   <Button type="link" style={{ padding: 0, height: 'auto', fontSize: '13px' }}>
-                    Read More →
+                    {t('readMore')} →
                   </Button>
                 </Space>
               </Space>
@@ -229,8 +230,9 @@ const BlogSection = () => {
             height: 'auto'
           }}
         >
-          View All Articles
+          {t('viewAllArticles')}
         </Button>
+      </div>
       </div>
     </div>
   );
