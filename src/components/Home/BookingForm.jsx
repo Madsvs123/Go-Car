@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   Card, 
@@ -33,35 +32,42 @@ const BookingForm = () => {
   });
 
   const cities = [
-    { value: 'cairo', label: 'Cairo' },
-    { value: 'alexandria', label: 'Alexandria' },
-    { value: 'dubai', label: 'Dubai' },
-    { value: 'abu-dhabi', label: 'Abu Dhabi' },
-    { value: 'riyadh', label: 'Riyadh' },
-    { value: 'jeddah', label: 'Jeddah' }
+    { value: 'cairo', label: t('city_cairo', 'Cairo') },
+    { value: 'alexandria', label: t('city_alexandria', 'Alexandria') },
+    { value: 'dubai', label: t('city_dubai', 'Dubai') },
+    { value: 'abu-dhabi', label: t('city_abu_dhabi', 'Abu Dhabi') },
+    { value: 'riyadh', label: t('city_riyadh', 'Riyadh') },
+    { value: 'jeddah', label: t('city_jeddah', 'Jeddah') }
   ];
 
   const locations = [
-    { value: 'airport', label: 'Airport' },
-    { value: 'downtown', label: 'Downtown' },
-    { value: 'hotel', label: 'Hotel' },
-    { value: 'station', label: 'Station' }
+    { value: 'airport', label: t('location_airport', 'Airport') },
+    { value: 'downtown', label: t('location_downtown', 'Downtown') },
+    { value: 'hotel', label: t('location_hotel', 'Hotel') },
+    { value: 'station', label: t('location_station', 'Station') }
   ];
 
   const carTypes = [
-    { value: 'economy', label: t('economy') },
-    { value: 'suv', label: t('suv') },
-    { value: 'luxury', label: t('luxury') },
-    { value: 'van', label: t('van') }
+    { value: 'economy', label: t('carType_economy', 'Economy') },
+    { value: 'suv', label: t('carType_suv', 'SUV') },
+    { value: 'luxury', label: t('carType_luxury', 'Luxury') },
+    { value: 'van', label: t('carType_van', 'Van') },
+    { value: 'electric', label: t('carType_electric', 'Electric') },
+    { value: 'sports', label: t('carType_sports', 'Sports') }
   ];
 
   const handleSearch = () => {
     if (!formData.pickupCity || !formData.destination || !formData.pickupDate) {
-      message.warning('Please fill in all required fields');
+      message.warning(t('booking_validation_warning', 'Please fill in all required fields'));
       return;
     }
     
-    message.success('Searching for available cars...');
+    if (tripType === 'roundTrip' && !formData.returnDate) {
+      message.warning(t('booking_validation_return_date', 'Please select return date for round trip'));
+      return;
+    }
+    
+    message.success(t('booking_search_success', 'Searching for available cars...'));
     console.log('Search data:', { tripType, ...formData });
   };
 
@@ -71,8 +77,10 @@ const BookingForm = () => {
         borderRadius: '16px', 
         boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)',
         background: 'rgba(255, 255, 255, 0.98)',
-        backdropFilter: 'blur(10px)'
+        backdropFilter: 'blur(10px)',
+        border: 'none'
       }}
+      bodyStyle={{ padding: '24px' }}
     >
       <Space direction="vertical" size="large" style={{ width: '100%' }}>
         <Radio.Group 
@@ -83,21 +91,22 @@ const BookingForm = () => {
           style={{ width: '100%', display: 'flex' }}
         >
           <Radio.Button value="oneWay" style={{ flex: 1, textAlign: 'center' }}>
-            {t('oneWay')}
+            {t('booking_oneWay', 'One Way')}
           </Radio.Button>
           <Radio.Button value="roundTrip" style={{ flex: 1, textAlign: 'center' }}>
-            {t('roundTrip')}
+            {t('booking_roundTrip', 'Round Trip')}
           </Radio.Button>
         </Radio.Group>
 
         <Row gutter={16}>
           <Col span={12}>
             <Space direction="vertical" size="small" style={{ width: '100%' }}>
-              <label style={{ fontWeight: 500, color: '#374151' }}>
-                <EnvironmentOutlined /> {t('pickupCity')} *
+              <label style={{ fontWeight: 500, color: '#374151', fontSize: '14px' }}>
+                <EnvironmentOutlined style={{ marginRight: '8px' }} /> 
+                {t('booking_pickupCity', 'Pickup City')} *
               </label>
               <Select
-                placeholder={t('pickupCity')}
+                placeholder={t('booking_pickupCity_placeholder', 'Select pickup city')}
                 style={{ width: '100%' }}
                 size="large"
                 value={formData.pickupCity}
@@ -111,11 +120,12 @@ const BookingForm = () => {
           </Col>
           <Col span={12}>
             <Space direction="vertical" size="small" style={{ width: '100%' }}>
-              <label style={{ fontWeight: 500, color: '#374151' }}>
-                <EnvironmentOutlined /> {t('destination')} *
+              <label style={{ fontWeight: 500, color: '#374151', fontSize: '14px' }}>
+                <EnvironmentOutlined style={{ marginRight: '8px' }} /> 
+                {t('booking_destination', 'Destination')} *
               </label>
               <Select
-                placeholder={t('destination')}
+                placeholder={t('booking_destination_placeholder', 'Select destination')}
                 style={{ width: '100%' }}
                 size="large"
                 value={formData.destination}
@@ -132,11 +142,11 @@ const BookingForm = () => {
         <Row gutter={16}>
           <Col span={12}>
             <Space direction="vertical" size="small" style={{ width: '100%' }}>
-              <label style={{ fontWeight: 500, color: '#374151' }}>
-                {t('pickupLocation')}
+              <label style={{ fontWeight: 500, color: '#374151', fontSize: '14px' }}>
+                {t('booking_pickupLocation', 'Pickup Location')}
               </label>
               <Select
-                placeholder={t('pickupLocation')}
+                placeholder={t('booking_pickupLocation_placeholder', 'Select location')}
                 style={{ width: '100%' }}
                 size="large"
                 value={formData.pickupLocation}
@@ -150,11 +160,11 @@ const BookingForm = () => {
           </Col>
           <Col span={12}>
             <Space direction="vertical" size="small" style={{ width: '100%' }}>
-              <label style={{ fontWeight: 500, color: '#374151' }}>
-                {t('destinationLocation')}
+              <label style={{ fontWeight: 500, color: '#374151', fontSize: '14px' }}>
+                {t('booking_destinationLocation', 'Destination Location')}
               </label>
               <Select
-                placeholder={t('destinationLocation')}
+                placeholder={t('booking_destinationLocation_placeholder', 'Select location')}
                 style={{ width: '100%' }}
                 size="large"
                 value={formData.destinationLocation}
@@ -171,13 +181,14 @@ const BookingForm = () => {
         <Row gutter={16}>
           <Col span={tripType === 'roundTrip' ? 12 : 24}>
             <Space direction="vertical" size="small" style={{ width: '100%' }}>
-              <label style={{ fontWeight: 500, color: '#374151' }}>
-                <CalendarOutlined /> {t('pickupDate')} *
+              <label style={{ fontWeight: 500, color: '#374151', fontSize: '14px' }}>
+                <CalendarOutlined style={{ marginRight: '8px' }} /> 
+                {t('booking_pickupDate', 'Pickup Date')} *
               </label>
               <DatePicker
                 style={{ width: '100%' }}
                 size="large"
-                placeholder={t('pickupDate')}
+                placeholder={t('booking_pickupDate_placeholder', 'Select date')}
                 value={formData.pickupDate}
                 onChange={(date) => setFormData({...formData, pickupDate: date})}
                 disabledDate={(current) => current && current < dayjs().startOf('day')}
@@ -187,13 +198,14 @@ const BookingForm = () => {
           {tripType === 'roundTrip' && (
             <Col span={12}>
               <Space direction="vertical" size="small" style={{ width: '100%' }}>
-                <label style={{ fontWeight: 500, color: '#374151' }}>
-                  <CalendarOutlined /> {t('returnDate')} *
+                <label style={{ fontWeight: 500, color: '#374151', fontSize: '14px' }}>
+                  <CalendarOutlined style={{ marginRight: '8px' }} /> 
+                  {t('booking_returnDate', 'Return Date')} *
                 </label>
                 <DatePicker
                   style={{ width: '100%' }}
                   size="large"
-                  placeholder={t('returnDate')}
+                  placeholder={t('booking_returnDate_placeholder', 'Select date')}
                   value={formData.returnDate}
                   onChange={(date) => setFormData({...formData, returnDate: date})}
                   disabledDate={(current) => current && (current < dayjs().startOf('day') || (formData.pickupDate && current < formData.pickupDate))}
@@ -206,8 +218,9 @@ const BookingForm = () => {
         <Row gutter={16}>
           <Col span={12}>
             <Space direction="vertical" size="small" style={{ width: '100%' }}>
-              <label style={{ fontWeight: 500, color: '#374151' }}>
-                <UserOutlined /> {t('passengers')}
+              <label style={{ fontWeight: 500, color: '#374151', fontSize: '14px' }}>
+                <UserOutlined style={{ marginRight: '8px' }} /> 
+                {t('booking_passengers', 'Passengers')}
               </label>
               <InputNumber
                 min={1}
@@ -216,19 +229,21 @@ const BookingForm = () => {
                 size="large"
                 value={formData.passengers}
                 onChange={(value) => setFormData({...formData, passengers: value})}
+                placeholder={t('booking_passengers_placeholder', 'Number of passengers')}
               />
             </Space>
           </Col>
           <Col span={12}>
             <Space direction="vertical" size="small" style={{ width: '100%' }}>
-              <label style={{ fontWeight: 500, color: '#374151' }}>
-                {t('carType')}
+              <label style={{ fontWeight: 500, color: '#374151', fontSize: '14px' }}>
+                {t('booking_carType', 'Car Type')}
               </label>
               <Select
                 style={{ width: '100%' }}
                 size="large"
                 value={formData.carType}
                 onChange={(value) => setFormData({...formData, carType: value})}
+                placeholder={t('booking_carType_placeholder', 'Select car type')}
               >
                 {carTypes.map(type => (
                   <Option key={type.value} value={type.value}>{type.label}</Option>
@@ -243,10 +258,16 @@ const BookingForm = () => {
           size="large"
           icon={<SearchOutlined />}
           onClick={handleSearch}
-          className="gradient-button"
-          style={{ width: '100%', height: '50px', fontSize: '16px' }}
+          style={{ 
+            width: '100%', 
+            height: '50px', 
+            fontSize: '16px',
+            background: "linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%)",
+            border: "none",
+            fontWeight: 600
+          }}
         >
-          {t('searchCars')}
+          {t('booking_searchCars', 'Search Cars')}
         </Button>
       </Space>
     </Card>

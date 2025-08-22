@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -48,7 +47,7 @@ body[dir="rtl"] {
 
 .hero-gradient {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  min-height: 600px;
+  min-height: 500px; /* Reduced from 600px */
   display: flex;
   align-items: center;
   color: white;
@@ -117,10 +116,10 @@ body[dir="rtl"] {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2.2rem; /* Reduced from 2.5rem */
   font-weight: 700;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem; /* Reduced from 3rem */
   background: linear-gradient(135deg, #4F46E5, #10B981);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -134,12 +133,13 @@ body[dir="rtl"] {
 
 @media (max-width: 768px) {
   .hero-gradient {
-    min-height: 500px;
+    min-height: 400px; /* Reduced from 500px */
     padding: 20px;
   }
   
   .section-title {
-    font-size: 2rem;
+    font-size: 1.8rem; /* Reduced from 2rem */
+    margin-bottom: 1.5rem; /* Reduced from 3rem */
   }
 }
 
@@ -147,6 +147,38 @@ body[dir="rtl"] {
   .ant-layout-header {
     padding: 0 16px !important;
   }
+}
+
+.home-preview-section {
+  padding: 30px 0; /* Reduced from 50px to 30px */
+  position: relative;
+  overflow: hidden;
+}
+
+.home-preview-section.alt-bg {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.home-preview-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.home-preview-section.light-bg::before {
+  background: linear-gradient(135deg, #4F46E5 0%, #10B981 100%);
+}
+
+.home-preview-section.dark-bg::before {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .car-card .ant-card-body {
@@ -167,4 +199,71 @@ body[dir="rtl"] {
 
 .ant-layout-content {
   margin-top: 64px;
+}
+
+/* Global Styles for MainLayout */
+.home-preview-section {
+  padding: 30px 0; /* Reduced from 50px to 30px */
+  background: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.home-preview-section.alt-bg {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Smooth scrolling for entire app */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Back to top button styles */
+.ant-back-top {
+  bottom: 100px;
+}
+
+.ant-back-top-inner {
+  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  border: none;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.ant-back-top-inner:hover {
+  background: linear-gradient(135deg, #3730a3 0%, #6d28d9 100%);
+}
+
+/* Float button group styles */
+.ant-float-btn-group .ant-float-btn {
+  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  border: none;
+}
+
+.ant-float-btn-group .ant-float-btn:hover {
+  background: linear-gradient(135deg, #3730a3 0%, #6d28d9 100%);
+}
+
+/* Section transitions */
+.section-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.section-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .home-preview-section {
+    padding: 25px 0; /* Reduced from 40px to 25px for mobile */
+  }
+  
+  .ant-float-btn-group {
+    right: 16px !important;
+    bottom: 80px !important;
+  }
 }
